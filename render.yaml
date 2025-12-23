@@ -1,0 +1,153 @@
+services:
+  # API Gateway
+  - type: web
+    name: food-api-gateway
+    env: node
+    rootDir: backend/api-gateway
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: RESTAURANT_SERVICE_URL
+        fromService:
+          type: web
+          name: food-restaurant-service
+          property: url
+      - key: ORDER_SERVICE_URL
+        fromService:
+          type: web
+          name: food-order-service
+          property: url
+      - key: DELIVERY_SERVICE_URL
+        fromService:
+          type: web
+          name: food-delivery-service
+          property: url
+      - key: NOTIFICATION_SERVICE_URL
+        fromService:
+          type: web
+          name: food-notification-service
+          property: url
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: food-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: food-redis
+          property: port
+
+  # Restaurant Service
+  - type: web
+    name: food-restaurant-service
+    env: node
+    rootDir: backend/restaurant-service
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: food-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: food-redis
+          property: port
+
+  # Order Service
+  - type: web
+    name: food-order-service
+    env: node
+    rootDir: backend/order-service
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: food-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: food-redis
+          property: port
+
+  # Delivery Service
+  - type: web
+    name: food-delivery-service
+    env: node
+    rootDir: backend/delivery-service
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: food-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: food-redis
+          property: port
+
+  # Notification Service
+  - type: web
+    name: food-notification-service
+    env: node
+    rootDir: backend/notification-service
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: REDIS_HOST
+        fromService:
+          type: redis
+          name: food-redis
+          property: host
+      - key: REDIS_PORT
+        fromService:
+          type: redis
+          name: food-redis
+          property: port
+
+  # Redis
+  - type: redis
+    name: food-redis
+    ipAllowList: [] # Allow all internal connections
+    plan: free # Note: Free Redis on Render expects internal connections only

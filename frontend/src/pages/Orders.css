@@ -1,0 +1,108 @@
+.orders-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 6rem 2rem;
+}
+
+.orders-header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.orders-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.order-card {
+    background: var(--bg-secondary);
+    border-radius: 24px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.order-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+}
+
+.order-badge {
+    font-weight: 700;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.order-status {
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.order-summary-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    color: var(--text-primary);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.order-footer {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-total h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.btn-track {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-track:hover {
+    background: var(--accent-color);
+    color: #000;
+}
+
+.tracking-modal {
+    margin-top: 3rem;
+    background: var(--bg-tertiary);
+    padding: 2.5rem;
+    border-radius: 20px;
+}
+
+.status-step {
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.status-step::before {
+    border-color: var(--bg-secondary) !important;
+}
+
+.status-step.active {
+    color: var(--accent-color) !important;
+}
+
+.status-step.active::before {
+    background: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}

@@ -1,0 +1,257 @@
+/* Mobile Responsive Styles - Add to index.css */
+
+/* Base responsive typography */
+html {
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+/* Global Mobile Styles */
+@media (max-width: 968px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Ensure all containers are mobile-friendly */
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    /* Make all grids single column on mobile */
+    .grid,
+    .card-grid,
+    .restaurant-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Reduce padding on mobile */
+    .card,
+    .auth-card,
+    .restaurant-card {
+        padding: 1.5rem !important;
+    }
+
+    /* Make buttons full width on mobile */
+    .btn-primary,
+    .btn-submit,
+    .btn-checkout {
+        width: 100% !important;
+        padding: 1rem !important;
+    }
+
+    /* Adjust font sizes */
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    h3 {
+        font-size: 1.25rem !important;
+    }
+
+    /* Make images responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Stack flex items vertically */
+    .flex-row {
+        flex-direction: column !important;
+    }
+
+    /* Adjust spacing */
+    .section {
+        padding: 2rem 1rem !important;
+    }
+
+    /* Make modals full screen on mobile */
+    .modal,
+    .dialog {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+    }
+
+    /* Adjust navbar for mobile */
+    .navbar {
+        padding: 1rem !important;
+    }
+
+    .nav-links {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+
+    /* Make forms mobile-friendly */
+    input,
+    select,
+    textarea {
+        font-size: 16px !important;
+        /* Prevents zoom on iOS */
+    }
+
+    /* Adjust cart summary */
+    .cart-summary {
+        position: static !important;
+        margin-top: 2rem !important;
+    }
+
+    /* Make restaurant cards stack */
+    .restaurant-cart-section {
+        margin-top: 1rem !important;
+    }
+
+    .restaurant-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+    }
+
+    .btn-clear-restaurant {
+        width: 100% !important;
+    }
+
+    /* Adjust menu items */
+    .menu-item {
+        flex-direction: column !important;
+    }
+
+    .menu-item-image {
+        width: 100% !important;
+        height: 200px !important;
+    }
+
+    /* Make quantity controls touch-friendly */
+    .quantity-controls button {
+        min-width: 44px !important;
+        min-height: 44px !important;
+    }
+
+    /* Adjust admin dashboard */
+    .admin-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Make tables scrollable */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Adjust order items */
+    .order-card {
+        padding: 1rem !important;
+    }
+
+    .order-items {
+        flex-direction: column !important;
+    }
+}
+
+/* Extra small devices (phones in portrait) */
+@media (max-width: 480px) {
+    .cart-item {
+        padding: 1rem !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+
+    .item-actions {
+        width: 100% !important;
+        flex-direction: column !important;
+        gap: 1rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .quantity-controls {
+        width: 100% !important;
+        justify-content: space-between !important;
+    }
+
+    /* Make restaurant info stack */
+    .restaurant-info {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+    }
+
+    /* Adjust hero section */
+    .hero {
+        padding: 2rem 1rem !important;
+    }
+
+    .hero h1 {
+        font-size: 1.75rem !important;
+    }
+
+    /* Make footer stack */
+    .footer {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+}
+
+/* Landscape phones */
+@media (max-width: 768px) and (orientation: landscape) {
+    .auth-container {
+        padding: 2rem 1rem !important;
+    }
+
+    .auth-card {
+        max-width: 600px !important;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .cart-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .restaurant-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Make all interactive elements larger for touch */
+    button,
+    a,
+    .clickable {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+
+    /* Remove hover effects on touch devices */
+    *:hover {
+        transform: none !important;
+    }
+
+    /* Add active states instead */
+    *:active {
+        opacity: 0.7;
+    }
+}

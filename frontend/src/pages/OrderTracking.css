@@ -1,0 +1,248 @@
+.tracking-wrapper {
+    min-height: calc(100vh - 80px);
+    /* Adjust for navbar */
+    background: #0f172a;
+    padding: 2rem;
+    color: #f8fafc;
+    display: flex;
+    justify-content: center;
+}
+
+.tracking-container {
+    max-width: 900px;
+    width: 100%;
+}
+
+.btn-back-nav {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    padding: 0;
+}
+
+.btn-back-nav:hover {
+    color: #f59e0b;
+}
+
+.tracking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #334155;
+}
+
+.tracking-header h1 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+.status-pill {
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+}
+
+.status-pill.delivered {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+}
+
+.status-pill.out_for_delivery {
+    background: rgba(249, 115, 22, 0.2);
+    color: #fdba74;
+}
+
+.status-pill.preparing {
+    background: rgba(245, 158, 11, 0.2);
+    color: #fbbf24;
+}
+
+.status-pill.created {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+}
+
+.status-pill.cancelled {
+    background: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+}
+
+.tracking-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    position: relative;
+    padding: 0 1rem;
+}
+
+.timeline-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background: #1e293b;
+    border: 2px solid #334155;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    color: #64748b;
+    transition: all 0.3s ease;
+}
+
+.step-label {
+    color: #64748b;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.step-line {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: #334155;
+    z-index: -1;
+}
+
+/* Active States */
+.timeline-step.completed .step-icon {
+    background: #f59e0b;
+    border-color: #f59e0b;
+    color: #0f172a;
+}
+
+.timeline-step.completed .step-label,
+.timeline-step.current .step-label {
+    color: #f59e0b;
+    font-weight: 700;
+}
+
+.timeline-step.completed .step-line {
+    background: #f59e0b;
+}
+
+.timeline-step.current .step-icon {
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.3);
+    transform: scale(1.1);
+}
+
+.tracking-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.details-card {
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #334155;
+}
+
+.details-card h3 {
+    margin: 0 0 1.5rem 0;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid #334155;
+}
+
+.info-row:last-child {
+    border: none;
+}
+
+.info-row .label {
+    color: #64748b;
+}
+
+.info-row .value {
+    color: #f8fafc;
+    font-weight: 600;
+}
+
+.map-view {
+    height: 200px;
+    background: #334155;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    position: relative;
+    overflow: hidden;
+}
+
+.map-pin-anim {
+    color: #f59e0b;
+    margin-bottom: 1rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@media (max-width: 768px) {
+    .tracking-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-label {
+        font-size: 0.75rem;
+    }
+
+    .step-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tracking-timeline {
+        overflow-x: auto;
+    }
+}

@@ -1,0 +1,6 @@
+# Ignore frontend on backend builds
+frontend/
+cleanup-databases.js
+*.bat
+RESTART_INSTRUCTIONS.md
+test/

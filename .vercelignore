@@ -1,0 +1,7 @@
+# Ignore backend and utility scripts
+backend/
+cleanup-databases.js
+create-admin.js
+*.bat
+RESTART_INSTRUCTIONS.md
+render.yaml

@@ -1,0 +1,26 @@
+{
+    "name": "food-delivery-system",
+    "version": "1.0.0",
+    "description": "Microservices-based Food Delivery System",
+    "scripts": {
+        "start:backend": "start-backend.bat",
+        "start:all": "powershell -ExecutionPolicy Bypass -File ./start-all.ps1",
+        "start:api-gateway": "cd backend/api-gateway && npm start",
+        "start:restaurant": "cd backend/restaurant-service && npm start",
+        "start:order": "cd backend/order-service && npm start",
+        "start:delivery": "cd backend/delivery-service && npm start",
+        "start:notification": "cd backend/notification-service && npm start",
+        "start:frontend": "cd frontend && npm start",
+        "install:all": "npm run install:backend && npm run install:frontend",
+        "install:backend": "cd backend/api-gateway && npm install && cd ../restaurant-service && npm install && cd ../order-service && npm install && cd ../delivery-service && npm install && cd ../notification-service && npm install",
+        "install:frontend": "cd frontend && npm install"
+    },
+    "keywords": [
+        "food-delivery",
+        "microservices",
+        "nodejs",
+        "react"
+    ],
+    "author": "",
+    "license": "ISC"
+}
