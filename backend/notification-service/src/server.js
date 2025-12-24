@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 async function startService() {
     try {
         // Connect to MongoDB
-        await mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/food_db');
+        await mongoose.connect(process.env.MONGODB_URI);
         console.log('✅ Connected to MongoDB');
 
         // Subscribe to events
