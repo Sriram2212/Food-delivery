@@ -15,26 +15,46 @@ services:
         sync: false
       - key: JWT_SECRET
         sync: false
-      - key: RESTAURANT_SERVICE_URL
+      - key: RESTAURANT_SERVICE_HOST
         fromService:
           type: web
           name: food-restaurant-service
-          property: url
-      - key: ORDER_SERVICE_URL
+          property: host
+      - key: RESTAURANT_SERVICE_PORT
+        fromService:
+          type: web
+          name: food-restaurant-service
+          property: port
+      - key: ORDER_SERVICE_HOST
         fromService:
           type: web
           name: food-order-service
-          property: url
-      - key: DELIVERY_SERVICE_URL
+          property: host
+      - key: ORDER_SERVICE_PORT
+        fromService:
+          type: web
+          name: food-order-service
+          property: port
+      - key: DELIVERY_SERVICE_HOST
         fromService:
           type: web
           name: food-delivery-service
-          property: url
-      - key: NOTIFICATION_SERVICE_URL
+          property: host
+      - key: DELIVERY_SERVICE_PORT
+        fromService:
+          type: web
+          name: food-delivery-service
+          property: port
+      - key: NOTIFICATION_SERVICE_HOST
         fromService:
           type: web
           name: food-notification-service
-          property: url
+          property: host
+      - key: NOTIFICATION_SERVICE_PORT
+        fromService:
+          type: web
+          name: food-notification-service
+          property: port
       - key: REDIS_HOST
         fromService:
           type: redis
