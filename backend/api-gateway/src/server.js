@@ -12,7 +12,7 @@ const startServer = async () => {
         // But we can ping to be safe if desired, or skip.
 
         // Connect to MongoDB (Authentication & Identity)
-        const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/food_db';
+        const MONGODB_URI = process.env.MONGODB_URI;
         await mongoose.connect(MONGODB_URI);
         console.log('✅ Connected to MongoDB (Identity Database)');
 
